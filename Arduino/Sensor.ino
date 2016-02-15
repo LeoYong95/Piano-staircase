@@ -1,5 +1,7 @@
+//Auth: Loe Yong
 #include "Sensor.h"
 
+//-----Sensor pointer----
 Sensor * s1;
 Sensor * s2;
 Sensor * s3;
@@ -10,7 +12,7 @@ Sensor * s7;
 
 
 void setup() {
-  // put your setup code here, to run once:
+  //----Construct sensor class----
   s1 = new Sensor(22,2);
   s2 = new Sensor(24,3);
   s3 = new Sensor(26,4);
@@ -19,14 +21,12 @@ void setup() {
   s6 = new Sensor(32,7);
   s7 = new Sensor(34,8); 
 
-  Serial.begin(115200); //this boud rate compatible with POSIX SERIAL
+  Serial.begin(115200); 
  
 }
 
 void loop() {
-  //----ULTRASONIC SENSOR----
-   Serial.begin(115200);
- 
+  //----Calculate the distance----
    unsigned long dist1 = s1->dist();
    unsigned long dist2 = s2->dist();
    unsigned long dist3 = s3->dist();  
@@ -36,7 +36,7 @@ void loop() {
    unsigned long dist7 = s7->dist();
 
 
-  // put your main code here, to run repeatedly:
+//----Pass the data as CSV to the Serial Port----
   Serial.print(dist1);
   Serial.print(",");
   Serial.print(dist2);

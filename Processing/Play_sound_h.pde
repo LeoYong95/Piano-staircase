@@ -1,6 +1,10 @@
+//Auth: Loe Yong
+//----Importing necessary libraries----
 import ddf.minim.*;
+
 float max_dist = 20;
 
+//=====BEGIN PLAYER CLASS=====
 class Player {
   
 public
@@ -9,11 +13,12 @@ Minim minim;
 AudioPlayer player; 
 int On = 1; 
  
+//----Constructor
 Player( AudioPlayer plyr ) {
    player = plyr;
 }
   
-  
+//----Function 
  void Play(float num ) { 
  
    if (num <= max_dist) {
@@ -43,3 +48,4 @@ Player( AudioPlayer plyr ) {
   
   
 };
+//=====END CLASS======

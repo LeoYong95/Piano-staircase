@@ -1,10 +1,14 @@
-
+//Auth: Loe Yong
+//=====BEGIN SENSOR CLASS=====
 class Sensor {
+
 public:
 int trigPin ;
 int echoPin ;
 unsigned long duration, distance;
 
+
+//----Constructor
 Sensor(int trig, int echo) {
   trigPin = trig;
   echoPin = echo;
@@ -13,6 +17,7 @@ Sensor(int trig, int echo) {
   
 }
 
+//----Calculate Distance
 int dist() {
 
    digitalWrite(trigPin, LOW); //Set trigger pin low
@@ -30,4 +35,4 @@ int dist() {
 }
   
 };
-
+//=====END CLASS======
